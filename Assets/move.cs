@@ -73,5 +73,14 @@ public class Move : MonoBehaviour
 
             Debug.Log("You win! YAY");
         }
+        if (collision.transform.CompareTag("WOWLeafy"))
+        {
+            transform.position = startPosition;
+            score += 200;
+            // score = (int)transform.position.z;
+            scoreText.text = "Score: " + score.ToString();
+
+            Debug.Log("WOW A BONUS");
+        }
     }
 }
