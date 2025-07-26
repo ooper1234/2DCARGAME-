@@ -70,7 +70,6 @@ public class Move : MonoBehaviour
         {
             transform.position = startPosition;
             score += 50;
-            Destroy(gameObject); // Destroy the goal object
             // score = (int)transform.position.z;
             scoreText.text = "Score: " + score.ToString();
 
