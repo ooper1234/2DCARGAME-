@@ -8,7 +8,6 @@ public class Move : MonoBehaviour
     public float stepPerMove = 1f;
     public TextMeshProUGUI scoreText;
     public int score = 0;
-    public GameObject WOWLeafy;
 
     void Start()
     {
@@ -81,6 +80,7 @@ public class Move : MonoBehaviour
             score += 200;
             // score = (int)transform.position.z;
             scoreText.text = "Score: " + score.ToString();
+            Destroy(collision.gameObject);
             
             Debug.Log("WOW A BONUS");
         }

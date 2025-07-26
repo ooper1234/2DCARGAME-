@@ -18,14 +18,14 @@ public class WOW : MonoBehaviour
     {
         if (direction == 1)
         {
-            if (transform.position.x < -12)
+            if (transform.position.x < -15)
             {
                 Destroy(gameObject);
             }
         }
         else
         {
-            if (transform.position.x > 12)
+            if (transform.position.x > 15)
             {
                 Destroy(gameObject);
             }
@@ -46,5 +46,20 @@ public class WOW : MonoBehaviour
             direction = 1;
         }
         roblox.linearVelocityX = -direction * move;
+
+        // if (direction > 0)
+        // {
+        //     direction = 1;
+        // }
+        // else if (direction < 0)
+        // {
+        //     direction = -1;
+        // }
+        // else
+        // {
+        //     direction = 1;
+        // }
+        // roblox.linearVelocityX = -direction * move;
+
     }
 }

@@ -20,13 +20,21 @@ public class EnemyTypeShit : MonoBehaviour
         {
             yield return new WaitForSeconds(sec);
             int r = Random.Range(0, 11);
-            if (r < 4)
+            if (r < 3)
             {
                 GameObject WOWLeafy = Instantiate(WOWLeafyPrefab, transform.position, Quaternion.identity);
                 Enemy controller = WOWLeafy.GetComponent<Enemy>();
+                float rotationDegree = -90f;
+                if (spawnDirection == 1)
+                {
+                    rotationDegree = 90f;
+                }
                 if (controller)
                 {
                     controller.direction = spawnDirection;
+                    controller.transform.rotation = Quaternion.Euler(
+                        0, 0, rotationDegree
+                    );
                 }
             }
             else
