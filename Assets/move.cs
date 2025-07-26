@@ -8,6 +8,8 @@ public class Move : MonoBehaviour
     public float stepPerMove = 1f;
     public TextMeshProUGUI scoreText;
     public int score = 0;
+    public GameObject WOWLeafy;
+
     void Start()
     {
         startPosition = transform.position; // Store the initial position of the object
@@ -68,6 +70,7 @@ public class Move : MonoBehaviour
         {
             transform.position = startPosition;
             score += 50;
+            Destroy(gameObject); // Destroy the goal object
             // score = (int)transform.position.z;
             scoreText.text = "Score: " + score.ToString();
 
@@ -75,11 +78,11 @@ public class Move : MonoBehaviour
         }
         if (collision.transform.CompareTag("WOWLeafy"))
         {
-            transform.position = startPosition;
+
             score += 200;
             // score = (int)transform.position.z;
             scoreText.text = "Score: " + score.ToString();
-
+            
             Debug.Log("WOW A BONUS");
         }
     }
